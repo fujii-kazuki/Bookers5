@@ -4,6 +4,8 @@ class SearchesController < ApplicationController
   def search
     # 検索対象
     @range = params[:range]
+    # 検索時入力文字
+    @word = params[:word]
 
     if @range == 'User'
       @users = User.looks(params[:search], params[:word])
